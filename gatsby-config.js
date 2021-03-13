@@ -2,8 +2,9 @@ module.exports = {
   siteMetadata: {
     title: 'Zeke Jeske',
     titleTemplate: '%s | Zeke Jeske',
-    description: 'Full-stack web developer',
+    description: 'Zeke Jeske is a full-stack web developer from Madison, Wisconsin specializing in Wordpress and Gatsby.',
     url: 'https://zeke-jeske.netlify.app',
+    lang: 'en'
   },
   plugins: [
     'gatsby-plugin-sharp',
