@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
+import SEO from './seo'
 
 import Header from './header'
 import Footer from './footer'
@@ -35,9 +36,10 @@ const Container = styled.div`
   min-height: 100vh;
 `
 
-export default function Layout({ children, showHeader = true }) {
+export default function Layout({ children, showHeader = true, title }) {
   return (
     <>
+      <SEO title={title} />
       <GlobalStyle />
       <Container>
         <title>Zeke Jeske</title>
