@@ -12,5 +12,13 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'projects',
+        path: `${__dirname}/src/projects`
+      }
+    },
+    `gatsby-plugin-mdx`,
   ],
 }

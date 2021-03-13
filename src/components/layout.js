@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     --primary-color: #118DF0;
     --secondary-color: #0E2F56;
     --dark-color: #202322;
-    --light-color: #ececda;
+    --light-color: #e8e8e0;
     
     --header-height: 4rem;
 
