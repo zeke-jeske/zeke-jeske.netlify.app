@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   ${normalize}
 
   :root {
-    --primary-color: #40ffbf;
+    --primary-color: #40ff95;
     --secondary-color: #282828;
     --dark-color: #202322;
     --light-color: #fff;
