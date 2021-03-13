@@ -6,14 +6,16 @@ const Container = styled.section`
   padding: 4rem 4rem 0;
   margin: 0 auto;
   position: relative;
+  overflow: auto;
 `
 
 const Header = styled.header`
   margin-bottom: 1.5rem;
+  text-align: center;
 `
 
-const Heading = styled.h1`
-  font-size: 2.25rem;
+const Heading = styled.h2`
+  font-weight: bold;
 `
 
 export default function Section({ children, title, id }) {

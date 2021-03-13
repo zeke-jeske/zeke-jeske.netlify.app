@@ -5,9 +5,10 @@ import { StaticImage } from 'gatsby-plugin-image'
 import ScrollDownButton from './scroll-down-button'
 
 const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
   position: relative;
+  height: 100vh;
+  width: 100vw;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,8 +28,8 @@ const SecondHeading = styled.h2`
 `
 
 const NameHighlight = styled.span`
-  color: var(--primary-color);
-  font-weight: bold;
+  color: var(--accent-color);
+  font-weight: normal;
 `
 
 const ScrollObserver = styled.div`
@@ -41,7 +42,7 @@ const ScrollObserver = styled.div`
 export default function Masthead({ onScroll }) {
   return (
     <>
-      <Container id='masthead'>
+      <Container id='home'>
         <StaticImage
           src='../images/hero.webp'
           alt='Blurred code' 
