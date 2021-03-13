@@ -30,9 +30,9 @@ export default function About() {
           <StaticImage
             src='../images/head-shot.jpg'
             alt='Zeke'
-            width={1259}
+            width={256}
+            height={256}
             style={{
-              width: '16rem',
               borderRadius: '50%',
             }}
           />

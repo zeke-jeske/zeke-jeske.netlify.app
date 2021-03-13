@@ -26,7 +26,7 @@ export default function Portfolio() {
               description
               image {
                 childImageSharp {
-                  gatsbyImageData
+                  gatsbyImageData(width: 400)
                 }
               }
             }
