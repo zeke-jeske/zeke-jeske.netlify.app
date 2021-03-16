@@ -48,8 +48,6 @@ export default function Portfolio() {
     }
   `)
 
-  console.log(device);
-
   return (
     <StyledSection id='portfolio' title='Portfolio'>
       <GridContainer className='container'>
