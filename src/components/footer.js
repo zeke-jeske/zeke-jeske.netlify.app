@@ -11,7 +11,7 @@ const Container = styled.footer`
 export default function Footer() {
   return (
     <Container>
-      <p>Zeke Jeske ©2021</p>
+      <small>Copyright © {(new Date()).getFullYear()} Zeke Jeske. All Rights Reserved</small>
     </Container>
   )
 }

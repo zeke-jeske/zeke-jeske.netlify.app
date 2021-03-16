@@ -1,16 +1,21 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import device from '../utilities/device'
 
 const Background = styled.div`
   position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
-  z-index: 10;
+  z-index: 25;
   height: var(--header-height);
   background-color: var(--secondary-color);
   border-bottom: 3px solid var(--accent-color);
+
+  @media ${device.lg} {
+    z-index: 10; /* Behind masthead */
+  }
 `
 
 const Container = styled.header`

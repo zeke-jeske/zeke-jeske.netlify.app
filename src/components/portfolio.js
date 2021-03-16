@@ -1,17 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
-
 import ProjectCard from './project-card'
 import Section from './section'
+import device from '../utilities/device'
+import Container from './container'
 
 const StyledSection = styled(Section)`
   background-color: var(--light-color);
 `
 
-const Container = styled.div`
+const GridContainer = styled(Container)`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  @media ${device.xs} {
+    grid-template-columns: 1fr;
+  }
+
+  @media ${device.sm} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media ${device.md} {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `
 
 export default function Portfolio() {
@@ -36,9 +48,11 @@ export default function Portfolio() {
     }
   `)
 
+  console.log(device);
+
   return (
     <StyledSection id='portfolio' title='Portfolio'>
-      <Container>
+      <GridContainer className='container'>
         {data.allMdx.edges.map(({ node }) => (
           <ProjectCard
             key={node.id}
@@ -47,7 +61,7 @@ export default function Portfolio() {
             description={node.frontmatter.description}
           />
         ))}
-      </Container>
+      </GridContainer>
     </StyledSection>
   )
 }

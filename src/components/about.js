@@ -3,19 +3,32 @@ import styled from 'styled-components'
 import Section from './section'
 import { StaticImage } from 'gatsby-plugin-image'
 import TechProfficiencyBar from './tech-profficiency-bar'
+import Container from './container'
+import device from '../utilities/device'
 
-const Container = styled.div`
+const StyledSection = styled(Section)`
+  /* Anchor offset for header */
+  margin-top: var(--header-height);
+  padding-top: 0;
+`
+
+const FlexContainer = styled(Container)`
   display: flex;
+  flex-direction: column;
+
+  @media ${device.md} {
+    flex-direction: row;
+  }
 `
 
 const Wrapper = styled.div`
   flex-basis: 0;
   padding: 0 3rem;
+  text-align: center;
 `
 
 const Left = styled(Wrapper)`
   flex: 2;
-  text-align: center;
 `
 
 const Right = styled(Wrapper)`
@@ -24,9 +37,10 @@ const Right = styled(Wrapper)`
 
 export default function About() {
   return (
-    <Section id='about' title='About'>
-      <Container>
+    <StyledSection id='about' title='About Me'>
+      <FlexContainer>
         <Left>
+          <h3>Who I am</h3>
           <StaticImage
             src='../images/head-shot.jpg'
             alt='Zeke'
@@ -36,7 +50,6 @@ export default function About() {
               borderRadius: '50%',
             }}
           />
-          <h3>Who I am</h3>
           <p>
             I'm a full-stack web developer from Madison, WI. I build fast, responsive, and accessible websites using tools like Wordpress and Gatsby. And yes, I'm only 15.
           </p>
@@ -52,7 +65,7 @@ export default function About() {
           <TechProfficiencyBar name='NPM' percent={95} />
           <TechProfficiencyBar name='Bash' percent={80} />
         </Right>
-      </Container>
-    </Section>
+      </FlexContainer>
+    </StyledSection>
   )
 }

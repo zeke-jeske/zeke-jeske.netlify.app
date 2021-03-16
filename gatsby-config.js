@@ -19,6 +19,7 @@ module.exports = {
         path: `${__dirname}/src/projects`
       }
     },
-    `gatsby-plugin-mdx`,
+    'gatsby-plugin-mdx',
+    'gatsby-plugin-sass',
   ],
 }
