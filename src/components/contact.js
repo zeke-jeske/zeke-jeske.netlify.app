@@ -40,6 +40,10 @@ const Input = styled.input`
   }
 `
 
+const Message = styled(Input)`
+  resize: vertical;
+`
+
 const Submit = styled(Button)`
   float: right;
 `
@@ -50,7 +54,7 @@ export default function Contact() {
       <Form name='contact' method='POST' data-netlify='true'>
         <Input type='text' placeholder='Name' name='name' />
         <Input type='email' placeholder='Email' name='email' />
-        <Input as='textarea' placeholder='Message' name='message' rows='4' />
+        <Message as='textarea' placeholder='Message' name='message' rows='4' />
         <Submit type='submit'>Send</Submit>
       </Form>
     </StyledSection>
