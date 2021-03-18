@@ -17,8 +17,8 @@ export default function PageLayout({ title, children }) {
   return (
     <Layout>
       <Main>
-        <Title>{ title }</Title>
         <Container>
+          <Title>{ title }</Title>
           { children }
         </Container>
       </Main>
