@@ -1,18 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
-import Section from './section'
 import { StaticImage } from 'gatsby-plugin-image'
+
+import Section from './section'
 import TechProfficiencyBar from './tech-profficiency-bar'
-import Container from './container'
+import ResponsiveContainer from './responsive-container'
 import device from '../utilities/device'
 
 const StyledSection = styled(Section)`
-  /* Anchor offset for header */
-  margin-top: var(--header-height);
-  padding-top: 0;
+  /* Ensures that the masthead is not at all in view when a #about anchor link is clicked */
+  scroll-margin-top: 0;
 `
 
-const FlexContainer = styled(Container)`
+const FlexContainer = styled(ResponsiveContainer)`
   display: flex;
   flex-direction: column;
 
@@ -21,17 +21,17 @@ const FlexContainer = styled(Container)`
   }
 `
 
-const Wrapper = styled.div`
+const Column = styled.div`
   flex-basis: 0;
   padding: 0 3rem;
   text-align: center;
 `
 
-const Left = styled(Wrapper)`
+const Left = styled(Column)`
   flex: 2;
 `
 
-const Right = styled(Wrapper)`
+const Right = styled(Column)`
   flex: 3;
 `
 
@@ -62,8 +62,8 @@ export default function About() {
           <TechProfficiencyBar name='WordPress' percent={70} />
           <TechProfficiencyBar name='React' percent={93} />
           <TechProfficiencyBar name='Gatsby' percent={70} />
-          <TechProfficiencyBar name='NPM' percent={95} />
-          <TechProfficiencyBar name='Bash' percent={80} />
+
+          <p>I am also profficient using NPM and Bash.</p>
         </Right>
       </FlexContainer>
     </StyledSection>

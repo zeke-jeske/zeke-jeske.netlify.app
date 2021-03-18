@@ -1,7 +1,8 @@
 import React from 'react'
+import styled from 'styled-components'
+
 import Section from './section'
 import Button from './button'
-import styled from 'styled-components'
 import device from '../utilities/device'
 
 const StyledSection = styled(Section)`

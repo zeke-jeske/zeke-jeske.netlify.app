@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import device from '../utilities/device'
 
-const Container = styled.div`
+const ResponsiveContainer = styled.div`
   @media ${device.md} {
     max-width: 800px;
     margin-left: auto;
@@ -17,4 +17,4 @@ const Container = styled.div`
   }
 `
 
-export default Container;
+export default ResponsiveContainer;

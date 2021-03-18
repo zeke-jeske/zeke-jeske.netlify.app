@@ -18,9 +18,9 @@ const Heading = styled.h2`
   font-weight: bold;
 `
 
-export default function Section({ children, title, id, className, useH1 = false }) {
+export default function Section({ children, title, id, className, useH1 = false, as }) {
   return (
-    <Container className={className} id={id}>
+    <Container className={className} id={id} as={as}>
       <Header>
         <Heading as={useH1 && 'h1'}>{ title }</Heading>
       </Header>

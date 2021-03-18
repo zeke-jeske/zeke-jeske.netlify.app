@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import ProjectCard from './project-card'
 import Section from './section'
 import device from '../utilities/device'
-import Container from './container'
+import Container from './responsive-container'
 
 const StyledSection = styled(Section)`
   background-color: var(--light-color);
