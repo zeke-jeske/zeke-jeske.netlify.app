@@ -28,18 +28,19 @@ const GridContainer = styled(Container)`
 
 export default function Portfolio() {
   const data = useStaticQuery(graphql`
-    query ProjectMDX {
-      allMdx {
+    query {
+      allProjectsJson {
         edges {
           node {
+            title
+            description
             id
-            frontmatter {
-              title
-              description
-              image {
-                childImageSharp {
-                  gatsbyImageData(width: 400)
-                }
+            fields {
+              slug
+            }
+            image {
+              childImageSharp {
+                gatsbyImageData
               }
             }
           }
@@ -51,12 +52,17 @@ export default function Portfolio() {
   return (
     <StyledSection id='portfolio' title='Portfolio'>
       <GridContainer className='container'>
-        {data.allMdx.edges.map(({ node }) => (
+        {data.allProjectsJson.edges.map(({
+          node: {
+            id,
+            fields: { slug },
+            ...props
+          }
+        }) => (
           <ProjectCard
-            key={node.id}
-            image={node.frontmatter.image}
-            title={node.frontmatter.title}
-            description={node.frontmatter.description}
+            key={id}
+            slug={slug}
+            {...props}
           />
         ))}
       </GridContainer>

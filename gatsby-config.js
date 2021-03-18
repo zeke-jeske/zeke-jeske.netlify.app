@@ -12,6 +12,7 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-json',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -19,7 +20,5 @@ module.exports = {
         path: `${__dirname}/src/projects`
       }
     },
-    'gatsby-plugin-mdx',
-    'gatsby-plugin-sass',
   ],
 }

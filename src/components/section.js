@@ -18,11 +18,11 @@ const Heading = styled.h2`
   font-weight: bold;
 `
 
-export default function Section({ children, title, id, className }) {
+export default function Section({ children, title, id, className, useH1 = false }) {
   return (
     <Container className={className} id={id}>
       <Header>
-        <Heading>{ title }</Heading>
+        <Heading as={useH1 && 'h1'}>{ title }</Heading>
       </Header>
       { children }
     </Container>

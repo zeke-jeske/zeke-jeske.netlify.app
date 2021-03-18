@@ -6,7 +6,7 @@ import ScrollDownButton from './scroll-down-button'
 
 const Container = styled.div`
   position: relative;
-  height: 100vh;
+  height: calc(100vh - var(--header-height));
   width: 100vw;
   z-index: 20;
   display: flex;
@@ -15,6 +15,7 @@ const Container = styled.div`
   text-align: center;
   justify-content: center;
   color: white;
+  scroll-margin-top: var(--header-height);
 `
 
 const FirstHeading = styled.h1`

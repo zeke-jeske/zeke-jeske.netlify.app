@@ -30,6 +30,10 @@ const Container = styled.header`
   align-items: stretch;
   padding: 0 2rem;
   color: var(--light-color);
+
+  & + * {
+    margin-top: var(--header-height);
+  }
 `
 
 const Navigation = styled.nav`
