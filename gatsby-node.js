@@ -21,6 +21,7 @@ exports.createPages = async ({ graphql, actions }) => {
       allProjectsJson {
         edges {
           node {
+            id
             fields {
               slug
             }

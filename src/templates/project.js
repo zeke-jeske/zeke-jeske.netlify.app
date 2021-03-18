@@ -14,8 +14,8 @@ export default function Project({ data }) {
 }
 
 export const query = graphql`
-  query {
-    projectsJson(id: {eq: "31bb2c69-4724-5894-8915-582fcb0e1cf4"}) {
+  query($id: String!) {
+    projectsJson(id: {eq: $id}) {
       title
       description
       image {
