@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Layout from '../layouts/default'
+import Layout from '../components/layout'
 import Masthead from '../components/masthead'
 import About from '../components/about'
 import Portfolio from '../components/portfolio'

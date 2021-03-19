@@ -5,9 +5,9 @@ import '@fontsource/open-sans'
 import '@fontsource/open-sans/600.css'
 import '@fontsource/open-sans/300.css'
 
-import SEO from '../components/seo'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import SEO from './seo'
+import Header from './header'
+import Footer from './footer'
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
