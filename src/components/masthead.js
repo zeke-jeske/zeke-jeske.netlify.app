@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
-import ScrollDownButton from './scroll-down-button'
+import Button from './button'
 import device from '../utilities/device'
 
 const Container = styled.div`
@@ -57,7 +57,7 @@ export default function Masthead() {
           <FirstHeading>Hello! I'm <NameHighlight>Zeke Jeske</NameHighlight>.</FirstHeading>
           <SecondHeading>I'm a full-stack web developer.</SecondHeading>
         </hgroup>
-        <ScrollDownButton>Check out my work ↓</ScrollDownButton>
+        <Button asLink href='#about'>Check out my work ↓</Button>
       </Container>
     </>
   )
