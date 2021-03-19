@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import Button from './button'
 
 const Container = styled.div`
   position: relative;
@@ -19,6 +20,7 @@ const Overlay = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
 
   &:hover {
@@ -28,17 +30,28 @@ const Overlay = styled.div`
 
 const Title = styled.h3`
   font-size: 1.5rem;
-  margin-bottom: .5rem;
+  margin: 0 0 .75rem;
   font-weight: normal;
 `
 
-export default function ProjectCard({ image, title, description }) {
+const Description = styled.p`
+  margin: 0;
+`
+
+const Link = styled(Button)`
+  flex-shrink: 0;
+  padding: .25rem .75rem;
+  margin: .75rem 0 0;
+`
+
+export default function ProjectCard({ image, title, description, url }) {
   return (
     <Container>
       <GatsbyImage image={ getImage(image) } alt={ title } />
       <Overlay>
         <Title>{ title }</Title>
-        <p>{ description }</p>
+        <Description>{ description }</Description>
+        <Link as='a' href={ url } target='_blank'>Check it out ↗</Link>
       </Overlay>
     </Container>
   )

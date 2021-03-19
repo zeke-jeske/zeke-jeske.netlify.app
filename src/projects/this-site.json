@@ -1,5 +1,6 @@
 {
   "title": "This Site",
   "description": "Designed, built, and deployed this portfolio site for myself.",
-  "image": "this-site.png"
+  "image": "this-site.png",
+  "url": "https://github.com/zeke-jeske/zeke-jeske.netlify.app"
 }

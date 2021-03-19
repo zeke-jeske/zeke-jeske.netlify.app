@@ -35,6 +35,7 @@ export default function Portfolio() {
             title
             description
             id
+            url
             image {
               childImageSharp {
                 gatsbyImageData
