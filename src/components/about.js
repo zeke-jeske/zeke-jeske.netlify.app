@@ -51,7 +51,7 @@ export default function About() {
             }}
           />
           <p>
-            I'm a full-stack web developer from Madison, WI. I build fast, responsive, and accessible websites using tools like Wordpress and Gatsby. And yes, I'm only 15.
+            I'm a full-stack web developer and high school student from Madison, WI. I build fast, responsive, and accessible websites using tools like Wordpress and Gatsby.
           </p>
         </Left>
         <Right>
