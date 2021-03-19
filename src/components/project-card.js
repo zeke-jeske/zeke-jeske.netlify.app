@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { Link } from 'gatsby'
 
 const Container = styled.div`
   position: relative;
