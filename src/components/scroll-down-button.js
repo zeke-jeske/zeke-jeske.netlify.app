@@ -3,7 +3,7 @@ import Button from './button'
 
 export default function ScrollDownButton({ children }) {
   return (
-    <Button as='a' href='/#about'>
+    <Button asLink href='/#about'>
       { children }
     </Button>
   )

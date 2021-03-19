@@ -51,7 +51,7 @@ export default function ProjectCard({ image, title, description, url }) {
       <Overlay>
         <Title>{ title }</Title>
         <Description>{ description }</Description>
-        <Link as='a' href={ url } target='_blank'>Check it out ↗</Link>
+        <Link href={ url } target='_blank' dark asLink>Check it out ↗</Link>
       </Overlay>
     </Container>
   )
