@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
 import ScrollDownButton from './scroll-down-button'
+import device from '../utilities/device'
 
 const Container = styled.div`
   position: relative;
-  height: calc(100vh - var(--header-height));
+  height: 100vh;
   width: 100vw;
   z-index: 20;
   display: flex;
@@ -14,7 +15,11 @@ const Container = styled.div`
   text-align: center;
   justify-content: center;
   color: white;
-  scroll-margin-top: var(--header-height);
+  padding-top: var(--header-height);
+  
+  @media ${device.lg} {
+    padding-top: 0;
+  }
 `
 
 const FirstHeading = styled.h1`
@@ -43,6 +48,7 @@ export default function Masthead() {
           style={{
             width: '100%',
             height: '100%',
+            top: 0,
             position: 'absolute',
             zIndex: -1,
           }}
