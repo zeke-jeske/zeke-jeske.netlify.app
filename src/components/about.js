@@ -44,10 +44,11 @@ export default function About() {
           <StaticImage
             src='../images/head-shot.jpg'
             alt='Zeke'
-            width={256}
-            height={256}
+            width={512}
+            height={512}
             style={{
               borderRadius: '50%',
+              width: '256px',
             }}
           />
           <p>
