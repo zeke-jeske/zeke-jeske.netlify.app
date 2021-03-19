@@ -33,14 +33,13 @@ const Title = styled.h3`
   font-weight: normal;
 `
 
-export default function ProjectCard({ image, title, description, slug }) {
+export default function ProjectCard({ image, title, description }) {
   return (
     <Container>
       <GatsbyImage image={ getImage(image) } alt={ title } />
       <Overlay>
         <Title>{ title }</Title>
         <p>{ description }</p>
-        <Link to={ slug }>View details</Link>
       </Overlay>
     </Container>
   )

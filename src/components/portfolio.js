@@ -35,9 +35,6 @@ export default function Portfolio() {
             title
             description
             id
-            fields {
-              slug
-            }
             image {
               childImageSharp {
                 gatsbyImageData
@@ -55,13 +52,11 @@ export default function Portfolio() {
         {data.allProjectsJson.edges.map(({
           node: {
             id,
-            fields: { slug },
             ...props
           }
         }) => (
           <ProjectCard
             key={id}
-            slug={slug}
             {...props}
           />
         ))}
