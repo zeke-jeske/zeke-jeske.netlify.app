@@ -54,14 +54,14 @@ const Container = styled.div`
   min-height: 100vh;
 `
 
-export default function Layout({ children, showHeader = true, title }) {
+export default function Layout({ children, title }) {
   return (
     <>
       <SEO title={title} />
       <GlobalStyle />
       <Container>
         <title>Zeke Jeske</title>
-        <Header show={showHeader} />
+        <Header />
 
         { children }
 

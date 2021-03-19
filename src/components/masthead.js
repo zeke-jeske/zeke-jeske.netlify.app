@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import InView from 'react-intersection-observer'
 import { StaticImage } from 'gatsby-plugin-image'
 import ScrollDownButton from './scroll-down-button'
 
@@ -33,14 +32,7 @@ const NameHighlight = styled.span`
   font-weight: normal;
 `
 
-const ScrollObserver = styled.div`
-  position: absolute;
-  bottom: 0;
-  top: calc(200vh - 1.5 * var(--header-height));
-  z-index: -50;
-`
-
-export default function Masthead({ onScroll }) {
+export default function Masthead() {
   return (
     <>
       <Container id='home'>
@@ -61,12 +53,6 @@ export default function Masthead({ onScroll }) {
         </hgroup>
         <ScrollDownButton>Check out my work ↓</ScrollDownButton>
       </Container>
-      <InView>
-        {({ inView, ref, entry }) => {
-          onScroll(inView)
-          return ( <ScrollObserver ref={ref} /> )
-        }}
-      </InView>
     </>
   )
 }

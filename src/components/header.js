@@ -53,7 +53,7 @@ const SiteTitle = styled.h1`
   display: flex;
 `
 
-export default function Header({ show }) {
+export default function Header() {
   return (
     <>
       <Background />
