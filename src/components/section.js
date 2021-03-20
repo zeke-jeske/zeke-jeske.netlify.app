@@ -1,13 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import device from '../utilities/device'
 
 const Container = styled.section`
   position: relative;
   padding: 4rem;
-  margin: 0 auto;
-  position: relative;
-  overflow: auto;
   scroll-margin-top: var(--header-height);
+
+  @media ${device.xs} {
+    padding: 3rem;
+  }
 `
 
 const Header = styled.header`

@@ -23,8 +23,11 @@ const FlexContainer = styled(ResponsiveContainer)`
 
 const Column = styled.div`
   flex-basis: 0;
-  padding: 0 3rem;
   text-align: center;
+
+  @media ${device.sm} {
+    padding: 0 3rem;
+  }
 `
 
 const Left = styled(Column)`
@@ -48,7 +51,7 @@ export default function About() {
             height={512}
             style={{
               borderRadius: '50%',
-              width: '256px',
+              maxWidth: '256px',
             }}
           />
           <p>

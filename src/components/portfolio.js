@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import ProjectCard from './project-card'
@@ -27,6 +27,7 @@ const GridContainer = styled(Container)`
 `
 
 export default function Portfolio() {
+  const [activeProj, setActiveProj] = useState('');
   const data = useStaticQuery(graphql`
     query {
       allProjectsJson {
@@ -55,12 +56,17 @@ export default function Portfolio() {
             id,
             ...props
           }
-        }) => (
-          <ProjectCard
-            key={id}
-            {...props}
-          />
-        ))}
+        }) => {
+          const active = id === activeProj;
+          return (
+            <ProjectCard
+              key={id}
+              active={active}
+              onTouchStart={event => setActiveProj(active ? '' : id)}
+              {...props}
+            />
+          )
+        })}
       </GridContainer>
     </StyledSection>
   )
