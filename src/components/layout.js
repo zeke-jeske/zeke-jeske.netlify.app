@@ -56,7 +56,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Container = styled.div`
   color: var(--dark-color);
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   position: relative;
   min-height: 100vh;
 `
@@ -70,7 +70,7 @@ export default function Layout({ children, title }) {
         <title>Zeke Jeske</title>
         <Header />
 
-        { children }
+        {children}
 
         <Footer />
       </Container>

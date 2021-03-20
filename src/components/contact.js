@@ -12,7 +12,7 @@ const StyledSection = styled(Section)`
 
 const Form = styled.form`
   overflow: auto; /* clearfix */
-  padding: .25rem;
+  padding: 0.25rem;
 
   @media ${device.sm} {
     margin: 0 auto;
@@ -37,7 +37,7 @@ const Input = styled.input`
   color: var(--light-color);
   margin-bottom: 1rem;
   min-height: 2rem;
-  padding: .5rem;
+  padding: 0.5rem;
 
   &:focus {
     outline: 1px solid var(--accent-color);
@@ -56,10 +56,38 @@ const Submit = styled(Button)`
 export default function Contact() {
   return (
     <StyledSection title='Contact' id='contact'>
-      <Form name='contact' method='POST' data-netlify={true} action='/contact-success'>
-        <p><Input type='text' placeholder='Name' name='name' aria-label='Name' required /></p>
-        <p><Input type='email' placeholder='Email' name='email' aria-label='Email' required /></p>
-        <Message as='textarea' placeholder='Message' name='message' aria-label='Message' rows='4' required />
+      <Form
+        name='contact'
+        method='POST'
+        data-netlify={true}
+        action='/contact-success'
+      >
+        <p>
+          <Input
+            type='text'
+            placeholder='Name'
+            name='name'
+            aria-label='Name'
+            required
+          />
+        </p>
+        <p>
+          <Input
+            type='email'
+            placeholder='Email'
+            name='email'
+            aria-label='Email'
+            required
+          />
+        </p>
+        <Message
+          as='textarea'
+          placeholder='Message'
+          name='message'
+          aria-label='Message'
+          rows='4'
+          required
+        />
         <Submit type='submit'>Send</Submit>
       </Form>
     </StyledSection>

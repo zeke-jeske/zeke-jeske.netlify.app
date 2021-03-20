@@ -2,9 +2,10 @@ module.exports = {
   siteMetadata: {
     title: 'Zeke Jeske',
     titleTemplate: '%s | Zeke Jeske',
-    description: 'Zeke Jeske is a full-stack web developer and high school student from Madison, Wisconsin specializing in Wordpress and Gatsby.',
+    description:
+      'Zeke Jeske is a full-stack web developer and high school student from Madison, Wisconsin specializing in Wordpress and Gatsby.',
     url: 'https://zeke-jeske.netlify.app',
-    lang: 'en'
+    lang: 'en',
   },
   plugins: [
     'gatsby-plugin-sharp',
@@ -17,8 +18,8 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'projects',
-        path: `${__dirname}/src/projects`
-      }
+        path: `${__dirname}/src/projects`,
+      },
     },
   ],
 }

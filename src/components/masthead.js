@@ -17,7 +17,7 @@ const Container = styled.div`
   color: white;
   padding: 3rem;
   padding-top: var(--header-height);
-  
+
   @media ${device.lg} {
     padding-top: 0;
   }
@@ -44,7 +44,7 @@ export default function Masthead() {
       <Container id='home'>
         <StaticImage
           src='../images/hero.webp'
-          alt='Blurred code' 
+          alt='Blurred code'
           loading='eager'
           style={{
             width: '100%',
@@ -55,10 +55,14 @@ export default function Masthead() {
           }}
         />
         <hgroup>
-          <FirstHeading>Hello! I'm <NameHighlight>Zeke Jeske</NameHighlight>.</FirstHeading>
+          <FirstHeading>
+            Hello! I'm <NameHighlight>Zeke Jeske</NameHighlight>.
+          </FirstHeading>
           <SecondHeading>I'm a full-stack web developer.</SecondHeading>
         </hgroup>
-        <Button asLink href='#about'>Check out my work ↓</Button>
+        <Button asLink href='#about'>
+          Check out my work ↓
+        </Button>
       </Container>
     </>
   )

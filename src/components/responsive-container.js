@@ -17,4 +17,4 @@ const ResponsiveContainer = styled.div`
   }
 `
 
-export default ResponsiveContainer;
+export default ResponsiveContainer

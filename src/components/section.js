@@ -21,13 +21,20 @@ const Heading = styled.h2`
   font-weight: bold;
 `
 
-export default function Section({ children, title, id, className, useH1 = false, as }) {
+export default function Section({
+  children,
+  title,
+  id,
+  className,
+  useH1 = false,
+  as,
+}) {
   return (
     <Container className={`${className} section`} id={id} as={as}>
       <Header>
-        <Heading as={useH1 && 'h1'}>{ title }</Heading>
+        <Heading as={useH1 && 'h1'}>{title}</Heading>
       </Header>
-      { children }
+      {children}
     </Container>
   )
 }

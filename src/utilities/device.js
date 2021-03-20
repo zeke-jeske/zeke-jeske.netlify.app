@@ -13,4 +13,4 @@ const device = {
   xl: `(min-width: ${sizes.xl}px)`,
 }
 
-export default device;
+export default device

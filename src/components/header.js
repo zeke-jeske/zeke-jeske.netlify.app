@@ -7,7 +7,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 const GlobalStyle = createGlobalStyle`
   body {
     /* Prevent scrolling when mobile navigation is open */
-    overflow: ${props => props.showNav && 'hidden'};
+    overflow: ${(props) => props.showNav && 'hidden'};
   }
 `
 
@@ -44,13 +44,14 @@ const Navigation = styled.div`
   @media ${device.xs} {
     position: absolute;
     background: var(--dark-blue);
-    opacity: .95;
+    opacity: 0.95;
     width: 100%;
     top: var(--header-height);
     left: 0;
     overflow: hidden;
-    transition: height .2s ease-in-out;
-    height: ${props => props.showMobile ? 'calc(100vh - var(--header-height))' : 0};
+    transition: height 0.2s ease-in-out;
+    height: ${(props) =>
+      props.showMobile ? 'calc(100vh - var(--header-height))' : 0};
   }
 `
 
@@ -78,8 +79,8 @@ const HeaderLink = styled(Link)`
 `
 
 const NavLink = styled(HeaderLink)`
-  transition: background .2s ease-in-out;
-  padding: .5rem 1rem;
+  transition: background 0.2s ease-in-out;
+  padding: 0.5rem 1rem;
 
   &:hover {
     background: var(--medium-blue);
@@ -92,11 +93,11 @@ const NavLink = styled(HeaderLink)`
   @media ${device.xs} {
     display: block;
     text-align: center;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   @media ${device.sm} {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 `
 
@@ -106,15 +107,15 @@ const SiteTitle = styled.h1`
 `
 
 const ToggleMenuBtn = styled.button`
-  height: calc(.5 * var(--header-height));
-  padding: .5rem;
+  height: calc(0.5 * var(--header-height));
+  padding: 0.5rem;
   background: transparent;
   border: none;
   margin: 1rem;
   color: inherit;
-  transition: background .1s ease-in-out;
+  transition: background 0.1s ease-in-out;
   border-radius: 2px;
-  
+
   &:hover {
     background: var(--primary-blue);
   }
@@ -125,8 +126,8 @@ const ToggleMenuBtn = styled.button`
 `
 
 export default function Header() {
-  const [showNav, setShowNav] = useState(false);
-  const hideNav = () => setShowNav(false);
+  const [showNav, setShowNav] = useState(false)
+  const hideNav = () => setShowNav(false)
   const toggleNav = () => setShowNav(!showNav)
 
   return (
@@ -134,12 +135,13 @@ export default function Header() {
       <GlobalStyle showNav={showNav} />
       <Background />
       <Container>
-        <SiteTitle><HeaderLink to='/#home' onClick={hideNav}>Zeke Jeske</HeaderLink></SiteTitle>
+        <SiteTitle>
+          <HeaderLink to='/#home' onClick={hideNav}>
+            Zeke Jeske
+          </HeaderLink>
+        </SiteTitle>
         <ToggleMenuBtn onClick={toggleNav} aria-hidden>
-          <StaticImage
-            src='../images/menu-icon.svg'
-            alt='Menu'
-          />
+          <StaticImage src='../images/menu-icon.svg' alt='Menu' />
         </ToggleMenuBtn>
         <Navigation showMobile={showNav}>
           <NavInner>

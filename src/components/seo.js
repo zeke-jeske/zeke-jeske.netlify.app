@@ -13,7 +13,7 @@ const SEO = ({ title, description, article, lang }) => {
     titleTemplate,
     defaultDescription,
     siteUrl,
-    defaultLang
+    defaultLang,
   } = site.siteMetadata
 
   const seo = {
@@ -29,15 +29,15 @@ const SEO = ({ title, description, article, lang }) => {
       titleTemplate={titleTemplate}
       htmlAttributes={{ lang: seo.lang }}
     >
-      <meta name="description" content={seo.description} />
-      {seo.url && <meta property="og:url" content={seo.url} />}
+      <meta name='description' content={seo.description} />
+      {seo.url && <meta property='og:url' content={seo.url} />}
 
-      {(article ? true : null) && <meta property="og:type" content="article" />}
-      {seo.title && <meta property="og:title" content={seo.title} />}
+      {(article ? true : null) && <meta property='og:type' content='article' />}
+      {seo.title && <meta property='og:title' content={seo.title} />}
       {seo.description && (
-        <meta property="og:description" content={seo.description} />
+        <meta property='og:description' content={seo.description} />
       )}
-      {seo.image && <meta property="og:image" content={seo.image} />}
+      {seo.image && <meta property='og:image' content={seo.image} />}
     </Helmet>
   )
 }

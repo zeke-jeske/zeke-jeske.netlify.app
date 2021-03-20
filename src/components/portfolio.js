@@ -20,14 +20,14 @@ const GridContainer = styled(Container)`
   @media ${device.sm} {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   @media ${device.md} {
     grid-template-columns: repeat(3, 1fr);
   }
 `
 
 export default function Portfolio() {
-  const [activeProj, setActiveProj] = useState('');
+  const [activeProj, setActiveProj] = useState('')
   const data = useStaticQuery(graphql`
     query {
       allProjectsJson {
@@ -51,18 +51,13 @@ export default function Portfolio() {
   return (
     <StyledSection id='portfolio' title='Portfolio'>
       <GridContainer className='container'>
-        {data.allProjectsJson.edges.map(({
-          node: {
-            id,
-            ...props
-          }
-        }) => {
-          const active = id === activeProj;
+        {data.allProjectsJson.edges.map(({ node: { id, ...props } }) => {
+          const active = id === activeProj
           return (
             <ProjectCard
               key={id}
               active={active}
-              onTouchStart={event => setActiveProj(active ? '' : id)}
+              onTouchStart={(event) => setActiveProj(active ? '' : id)}
               {...props}
             />
           )
