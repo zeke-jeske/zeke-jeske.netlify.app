@@ -134,7 +134,7 @@ export default function Header() {
       <GlobalStyle showNav={showNav} />
       <Background />
       <Container>
-        <SiteTitle><HeaderLink to='/#home'>Zeke Jeske</HeaderLink></SiteTitle>
+        <SiteTitle><HeaderLink to='/#home' onClick={hideNav}>Zeke Jeske</HeaderLink></SiteTitle>
         <ToggleMenuBtn onClick={toggleNav} aria-hidden>
           <StaticImage
             src='../images/menu-icon.svg'
