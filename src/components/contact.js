@@ -57,8 +57,8 @@ export default function Contact() {
   return (
     <StyledSection title='Contact' id='contact'>
       <Form name='contact' method='POST' data-netlify={true} action='/contact-success'>
-        <Input type='text' placeholder='Name' name='name' aria-label='Name' required />
-        <Input type='text' />
+        <p><Input type='text' placeholder='Name' name='name' aria-label='Name' required /></p>
+        <p><Input type='email' name='email' /></p>
         <Message as='textarea' placeholder='Message' name='message' aria-label='Message' rows='4' required />
         <Submit type='submit'>Send</Submit>
       </Form>
