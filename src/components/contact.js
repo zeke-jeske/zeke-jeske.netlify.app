@@ -11,6 +11,9 @@ const StyledSection = styled(Section)`
 `
 
 const Form = styled.form`
+  overflow: auto; /* clearfix */
+  padding: .25rem;
+
   @media ${device.sm} {
     margin: 0 auto;
     max-width: 500px;
@@ -47,6 +50,7 @@ const Message = styled(Input)`
 
 const Submit = styled(Button)`
   float: right;
+  margin-bottom: 0;
 `
 
 export default function Contact() {

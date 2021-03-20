@@ -15,6 +15,7 @@ const Container = styled.div`
   text-align: center;
   justify-content: center;
   color: white;
+  padding: 3rem;
   padding-top: var(--header-height);
   
   @media ${device.lg} {
