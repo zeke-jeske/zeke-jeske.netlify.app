@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     --light-color: #e8e8e0;
     
     --header-height: 4rem;
+    --footer-height: 4.5rem;
 
     line-height: 1.5;
     font-weight: lighter;

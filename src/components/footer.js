@@ -5,6 +5,7 @@ const Container = styled.footer`
   background: var(--dark-color);
   color: var(--light-color);
   padding: 1.5rem 4rem;
+  height: var(--footer-height);
   text-align: center;
 `
 
