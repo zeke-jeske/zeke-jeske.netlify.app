@@ -116,7 +116,7 @@ const ToggleMenuBtn = styled.button`
   border-radius: 2px;
   
   &:hover {
-    background: var(--primary-color);
+    background: var(--primary-blue);
   }
 
   @media ${device.sm} {

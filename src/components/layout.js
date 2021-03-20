@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
     --primary-blue: #0073CE;
     --medium-blue: #0C64AE;
     --dark-blue: #07203E;
+    --outline-color: #47abe187;
     --dark-color: #202322;
     --light-color: #e8e8e0;
     
@@ -45,6 +46,10 @@ const GlobalStyle = createGlobalStyle`
 
   h3 {
     font-size: 1.75rem;
+  }
+
+  button:focus, a:focus {
+    outline: 1px dotted;
   }
 `
 

@@ -9,13 +9,18 @@ const Btn = styled.button`
   font-size: 1.125rem;
   overflow: hidden;
   background-color: transparent;
-  transition: color, background-color .2s ease-in-out;
+  transition: color, background-color, box-shadow .2s ease-in-out;
   text-decoration: none;
   color: var(--${ props => props.color }-color);
   
   &:hover {
     background-color: var(--${props => props.color}-color);
     color: var(--${ props => props.textColor }-color);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--outline-color);
   }
 `
 
