@@ -12,7 +12,7 @@ const Container = styled.div`
 `
 
 const DoneArea = styled.div`
-  background-color: var(--primary-color);
+  background-color: var(--primary-blue);
   width: ${props => props.percent - 30}%;
   text-align: right;
   padding: .25rem 1rem;
@@ -21,7 +21,7 @@ const DoneArea = styled.div`
 const Label = styled.p`
   padding: .25rem 1rem;
   margin: 0;
-  background-color: var(--secondary-color);
+  background-color: var(--dark-blue);
   width: 30%;
   text-align: center;
 `

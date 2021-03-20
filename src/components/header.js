@@ -18,7 +18,7 @@ const Background = styled.div`
   width: 100vw;
   z-index: 25;
   height: var(--header-height);
-  background-color: var(--secondary-color);
+  background-color: var(--dark-blue);
   border-bottom: 3px solid var(--accent-color);
 
   @media ${device.lg} {
@@ -43,7 +43,7 @@ const Container = styled.header`
 const Navigation = styled.div`
   @media ${device.xs} {
     position: absolute;
-    background: var(--secondary-color);
+    background: var(--dark-blue);
     opacity: .95;
     width: 100%;
     top: var(--header-height);
@@ -82,11 +82,11 @@ const NavLink = styled(HeaderLink)`
   padding: .5rem 1rem;
 
   &:hover {
-    background: var(--primary-2-color);
+    background: var(--medium-blue);
   }
 
   &:active {
-    background: var(--primary-color);
+    background: var(--primary-blue);
   }
 
   @media ${device.xs} {

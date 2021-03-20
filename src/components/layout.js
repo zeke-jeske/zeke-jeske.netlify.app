@@ -14,9 +14,9 @@ const GlobalStyle = createGlobalStyle`
 
   :root {
     --accent-color: #FF304F;
-    --primary-color: #0073CE;
-    --primary-2-color: #0C64AE;
-    --secondary-color: #07203E;
+    --primary-blue: #0073CE;
+    --medium-blue: #0C64AE;
+    --dark-blue: #07203E;
     --dark-color: #202322;
     --light-color: #e8e8e0;
     
