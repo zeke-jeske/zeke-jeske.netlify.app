@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.section`
+  position: relative;
   padding: 4rem;
   margin: 0 auto;
   position: relative;
@@ -20,7 +21,7 @@ const Heading = styled.h2`
 
 export default function Section({ children, title, id, className, useH1 = false, as }) {
   return (
-    <Container className={className} id={id} as={as}>
+    <Container className={`${className} section`} id={id} as={as}>
       <Header>
         <Heading as={useH1 && 'h1'}>{ title }</Heading>
       </Header>
