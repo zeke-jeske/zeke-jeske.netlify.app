@@ -58,7 +58,7 @@ export default function Masthead() {
           <FirstHeading>
             Hello! I'm <NameHighlight>Zeke Jeske</NameHighlight>.
           </FirstHeading>
-          <SecondHeading>I'm a front-end web developer.</SecondHeading>
+          <SecondHeading>I'm a full-stack web developer.</SecondHeading>
         </hgroup>
         <Button asLink href='#about'>
           Check out my work ↓

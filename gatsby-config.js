@@ -3,7 +3,7 @@ module.exports = {
     title: 'Zeke Jeske',
     titleTemplate: '%s | Zeke Jeske',
     description:
-      'Zeke Jeske is a front-end web developer and high school student from Madison, Wisconsin specializing in Wordpress and Gatsby.',
+      'Zeke Jeske is a full-stack web developer and high school student from Madison, Wisconsin specializing in Wordpress and Gatsby.',
     url: 'https://zeke-jeske.netlify.app',
     lang: 'en',
   },

@@ -55,7 +55,7 @@ export default function About() {
             }}
           />
           <p>
-            I'm a front-end web developer and high school student from Madison,
+            I'm a full-stack web developer and high school student from Madison,
             WI. I build fast, responsive, and accessible websites using tools
             like Wordpress and Gatsby.
           </p>
