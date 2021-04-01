@@ -2,48 +2,50 @@ import React from 'react'
 import styled from 'styled-components'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Button from './button'
-import device from '../utilities/device'
 
 const Container = styled.div`
-  position: relative;
-  z-index: 0;
+  position: relative; // for position: absolute on image
+  z-index: 0; // makes the image show up
 
-  /* Maintain a 3:4 aspect ratio if possible */
-  @media ${device.xs} {
-    min-height: calc(3 / 4 * (100vw - 6rem));
+  &::before {
+    content: '';
+    width: 0;
+    height: 0;
+    float: left;
+    padding-top: 75%; // maintain 3:4 aspect ratio if possible
   }
 
-  @media ${device.sm} {
-    min-height: calc(3 / 4 * (100vw - 8rem) / 2);
-  }
-
-  @media ${device.md} {
-    min-height: calc(3 / 4 * (100vw - 8rem) / 3);
+  &::after {
+    // to clear float
+    content: '';
+    display: table;
+    clear: both;
   }
 `
 
 const Image = styled(GatsbyImage)`
   position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; // prevents position: absolute from making this show up in front of the overlay
 `
 
 const Overlay = styled.div`
-  padding: 3rem;
+  padding: 2rem;
   height: 100%;
   transition: opacity 0.1s ease-in-out;
   background-color: white;
   display: flex;
+  // props.show = when someone on mobile has tapped on the card
   opacity: ${(props) => !props.show && 0};
-  visibility: ${(props) => !props.show && 'hidden'};
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
 
   ${Container}:hover & {
-    visibility: initial;
     opacity: 1;
   }
 `
@@ -64,21 +66,20 @@ const Link = styled(Button)`
   margin: 0.75rem 0 0;
 `
 
-export default function ProjectCard({
-  image,
-  title,
-  description,
-  url,
-  active,
-  onTouchStart,
-}) {
+export default function ProjectCard({ project, active, onTouchStart }) {
   return (
     <Container onTouchStart={onTouchStart}>
-      <Image image={getImage(image)} alt={title} />
+      <Image image={getImage(project.image)} alt={project.title} />
       <Overlay show={active} onTouchStart={onTouchStart}>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-        <Link href={url} target='_blank' rel='noopener noreferrer' dark asLink>
+        <Title>{project.title}</Title>
+        <Description>{project.description}</Description>
+        <Link
+          href={project.url}
+          target='_blank'
+          rel='noopener noreferrer'
+          dark
+          asLink
+        >
           Check it out ↗
         </Link>
       </Overlay>
