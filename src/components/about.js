@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { StaticImage } from 'gatsby-plugin-image'
+import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Section from './section'
-import TechProfficiencyBar from './tech-profficiency-bar'
 import ResponsiveContainer from './responsive-container'
 import device from '../utilities/device'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const StyledSection = styled(Section)`
   /* Ensures that the masthead is not at all in view when a #about anchor link is clicked */
@@ -38,7 +38,38 @@ const Right = styled(Column)`
   flex: 3;
 `
 
+const Logo = styled(GatsbyImage)`
+  height: 2rem;
+  margin: 0.5rem 0.75rem;
+
+  @media ${device.md} {
+    margin: 0.75rem 1.5rem;
+  }
+`
+
 export default function About() {
+  const {
+    allFile: { edges: logos },
+  } = useStaticQuery(graphql`
+    {
+      allFile(filter: { sourceInstanceName: { eq: "logos" } }) {
+        edges {
+          node {
+            name
+            id
+            childImageSharp {
+              gatsbyImageData(
+                transformOptions: { grayscale: false }
+                height: 32
+                placeholder: BLURRED
+              )
+            }
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <StyledSection id='about' title='About Me'>
       <FlexContainer>
@@ -62,14 +93,14 @@ export default function About() {
         </Left>
         <Right>
           <h3>What I know</h3>
-          <TechProfficiencyBar name='Javascript' percent={98} />
-          <TechProfficiencyBar name='HTML' percent={96} />
-          <TechProfficiencyBar name='CSS' percent={85} />
-          <TechProfficiencyBar name='WordPress' percent={70} />
-          <TechProfficiencyBar name='React' percent={93} />
-          <TechProfficiencyBar name='Gatsby' percent={70} />
-
-          <p>I am also profficient using NPM and Bash.</p>
+          {logos.map(({ node }) => (
+            <Logo
+              key={node.id}
+              image={getImage(node)}
+              alt={node.name}
+              objectFit='contain'
+            />
+          ))}
         </Right>
       </FlexContainer>
     </StyledSection>

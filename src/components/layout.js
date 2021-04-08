@@ -8,6 +8,7 @@ import '@fontsource/open-sans/300.css'
 import SEO from './seo'
 import Header from './header'
 import Footer from './footer'
+import device from '../utilities/device'
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -30,6 +31,10 @@ const GlobalStyle = createGlobalStyle`
 
     @media screen and (prefers-reduced-motion: reduce) {
       scroll-behavior: auto;
+    }
+
+    @media ${device.xs} {
+      font-size: 85%;
     }
   }
 
